@@ -1,0 +1,57 @@
+.philosophy{
+
+    position:relative;
+
+    min-height:80vh;
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.philosophy-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.72);
+
+}
+
+.philosophy-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:700px;
+
+}
+
+.philosophy span{
+
+    color:var(--gold);
+
+    letter-spacing:4px;
+
+}
+
+.philosophy h2{
+
+    margin:20px 0;
+
+}
+
+.philosophy p{
+
+    margin-bottom:40px;
+
+    max-width:600px;
+
+}

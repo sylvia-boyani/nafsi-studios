@@ -1,8 +1,16 @@
+import Hero from "../../components/home/Hero";
+import Phylosophy from "../../components/home/Phylosophy/Phylosophy";
+import CreativeSpaces from "../../components/home/CreativeSpaces/CreativeSpaces"
+import Experience from "../../components/home/Experience/Experience"
+
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <>
+      <Hero />
+      <Phylosophy />
+      <CreativeSpaces />
+      <Experience />
+    </>
   );
 }
 

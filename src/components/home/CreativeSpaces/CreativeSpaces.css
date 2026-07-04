@@ -1,0 +1,56 @@
+.creative-spaces{
+
+    background:var(--bg-primary);
+
+}
+
+.spaces-heading{
+
+    text-align:center;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+.spaces-heading span{
+
+    color:var(--gold);
+
+    letter-spacing:3px;
+
+}
+
+.spaces-heading h2{
+
+    margin:20px 0;
+
+}
+
+.spaces-heading p{
+
+    margin-bottom:100px;
+
+}
+
+@media(max-width:900px){
+
+.space-card,
+.space-card.reverse{
+
+grid-template-columns:1fr;
+
+direction:ltr;
+
+gap:40px;
+
+}
+
+.space-image img{
+
+height:350px;
+
+}
+
+}
