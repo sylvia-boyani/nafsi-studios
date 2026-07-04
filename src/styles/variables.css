@@ -1,35 +1,35 @@
-:root {
+:root{
 
-  /* Backgrounds */
+    /* Colors */
 
-  --bg-primary: #0D0D0D;
-  --bg-secondary: #171717;
-  --bg-card: #1F1F1F;
+    --bg-primary:#0D0D0D;
+    --bg-secondary:#151515;
+    --bg-card:#1E1E1E;
 
-  /* Text */
+    --text-primary:#F5F5F5;
+    --text-secondary:#B8B8B8;
 
-  --text-primary: #F5F5F5;
-  --text-secondary: #B8B8B8;
+    --gold:#C89B3C;
+    --terracotta:#C46A3A;
+    --cream:#F2ECE3;
 
-  /* Brand */
+    --border:rgba(255,255,255,.08);
 
-  --gold: #C89B3C;
-  --terracotta: #C46A3A;
-  --cream: #F2ECE3;
+    /* Fonts */
 
-  /* Borders */
+    --heading:'Cormorant Garamond', serif;
+    --body:'Inter', sans-serif;
 
-  --border: rgba(255,255,255,.08);
+    /* Sizes */
 
-  /* Shadows */
+    --radius:20px;
 
-  --shadow: 0 15px 40px rgba(0,0,0,.45);
+    --transition:.35s ease;
 
-  /* Radius */
+    --shadow:0 20px 50px rgba(0,0,0,.45);
 
-  --radius: 18px;
+    /* Container */
 
-  /* Transition */
+    --container:1280px;
 
-  --transition: .35s ease;
 }

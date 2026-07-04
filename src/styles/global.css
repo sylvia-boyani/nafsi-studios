@@ -16,3 +16,17 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.container{
+
+    width:min(92%, var(--container));
+
+    margin:auto;
+
+}
+
+section{
+
+    padding:120px 0;
+
+}

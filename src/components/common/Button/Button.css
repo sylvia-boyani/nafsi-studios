@@ -1,0 +1,27 @@
+.primary-btn{
+
+    background:var(--gold);
+
+    color:#111;
+
+    border:none;
+
+    padding:18px 42px;
+
+    border-radius:100px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 30px rgba(200,155,60,.35);
+
+}

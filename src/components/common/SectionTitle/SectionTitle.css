@@ -1,0 +1,23 @@
+.section-title{
+
+    margin-bottom:70px;
+
+}
+
+.section-title span{
+
+    color:var(--gold);
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    font-size:.9rem;
+
+}
+
+.section-title h2{
+
+    margin-top:12px;
+
+}
