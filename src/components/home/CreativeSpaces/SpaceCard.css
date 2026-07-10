@@ -79,3 +79,105 @@
     font-size:1rem;
 
 }
+
+/* ===============================
+   TABLETS
+================================= */
+
+@media (max-width: 992px) {
+
+  .space-card,
+  .space-card.reverse {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin: 100px 0;
+    direction: ltr;
+  }
+
+  .space-card.reverse > * {
+    direction: ltr;
+  }
+
+  .space-image img {
+    height: 450px;
+  }
+
+  .space-content {
+    text-align: center;
+  }
+
+  .space-link {
+    justify-content: center;
+  }
+
+}
+
+/* ===============================
+   MOBILE
+================================= */
+
+@media (max-width: 768px) {
+
+  .space-card {
+    margin: 70px 0;
+    gap: 30px;
+  }
+
+  .space-image {
+    border-radius: 18px;
+  }
+
+  .space-image img {
+    height: 280px;
+  }
+
+  .space-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .space-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+  }
+
+  .space-link {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    border: 1px solid var(--gold);
+    border-radius: 50px;
+    transition: var(--transition);
+  }
+
+  .space-link:hover {
+    background: var(--gold);
+    color: #111;
+  }
+
+}
+
+/* ===============================
+   SMALL PHONES
+================================= */
+
+@media (max-width: 480px) {
+
+  .space-card {
+    margin: 60px 0;
+  }
+
+  .space-image img {
+    height: 220px;
+  }
+
+  .space-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .space-content p {
+    font-size: 0.95rem;
+  }
+
+}

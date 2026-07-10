@@ -139,3 +139,101 @@ background:var(--gold);
 color:#111;
 
 }
+
+/* ===========================
+   Responsive Gallery
+=========================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .large,
+    .portrait,
+    .square {
+        height: 350px;
+    }
+
+    .gallery-filter {
+        gap: 12px;
+        margin: 50px 0;
+    }
+
+    .gallery-filter button {
+        padding: 12px 22px;
+        font-size: 0.95rem;
+    }
+
+    .gallery-overlay {
+        padding: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .large,
+    .portrait,
+    .square {
+        height: 280px;
+    }
+
+    .gallery-item {
+        border-radius: 16px;
+    }
+
+    .gallery-filter {
+        justify-content: center;
+        gap: 10px;
+        margin: 40px 0;
+    }
+
+    .gallery-filter button {
+        width: 100%;
+        max-width: 250px;
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .gallery-overlay {
+        opacity: 1; /* Better for touch devices */
+        padding: 15px;
+    }
+
+    .gallery-overlay span {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+    .large,
+    .portrait,
+    .square {
+        height: 220px;
+    }
+
+    .gallery-filter button {
+        max-width: 100%;
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .gallery-overlay {
+        padding: 12px;
+    }
+
+    .gallery-overlay span {
+        font-size: 0.8rem;
+    }
+}

@@ -197,3 +197,132 @@ font-size:1.1rem;
 letter-spacing:2px;
 
 }
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.7s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.large {
+    height: 500px;
+}
+
+.square {
+    height: 320px;
+}
+
+.portrait {
+    height: 650px;
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay span {
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .large,
+    .portrait,
+    .square {
+        height: 350px;
+    }
+
+    .gallery-overlay {
+        padding: 20px;
+    }
+
+    .gallery-overlay span {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .large,
+    .portrait,
+    .square {
+        height: 280px;
+    }
+
+    .gallery-item {
+        border-radius: 18px;
+    }
+
+    .gallery-overlay {
+        opacity: 1; /* Optional: always show overlay on touch devices */
+        padding: 15px;
+    }
+
+    .gallery-overlay span {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .large,
+    .portrait,
+    .square {
+        height: 220px;
+    }
+
+    .gallery-overlay {
+        padding: 12px;
+    }
+
+    .gallery-overlay span {
+        font-size: 0.85rem;
+    }
+}
