@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import "./whoWeAre.css";
 
-import storyImage from "../../../assets/images/collage.png";
+import storyImage from "../../../assets/2view.jpeg";
 
 function WhoWeAre() {
   return (

@@ -1,25 +1,42 @@
 import { motion } from "framer-motion";
-// import { FaArrowDown } from "react-icons/fa";
 import Button from "../common/Button/Button";
 import "./Hero.css";
+import { useRef } from "react";
 
-import heroImage from "../../assets/images/collage.png";
+import heroVideo from "../../assets/nafsi-video.mp4";
 
 function Hero() {
+   const videoRef = useRef(null);
   return (
-    <section
-      className="hero"
-      style={{ backgroundImage: `url(${heroImage})` }}
-    >
+    <section className="hero">
+
+      {/* Background Video */}
+      <video
+        className="hero-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        onEnded={() => {
+          videoRef.current.currentTime = 0;
+          videoRef.current.play();
+        }}
+      >
+        <source src={heroVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Dark Overlay */}
       <div className="hero-overlay"></div>
 
+      {/* Hero Content */}
       <div className="container hero-content">
 
         <motion.span
+          className="hero-tag"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="hero-tag"
         >
           WELCOME TO NAFSI STUDIOS
         </motion.span>
@@ -29,9 +46,9 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          Where Every Art Form
+          Where
           <br />
-          Finds Its Voice
+          We Birth Art
         </motion.h1>
 
         <motion.p
@@ -50,15 +67,16 @@ function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          <Button>Explore Our Spaces</Button>
+          <Button>
+            Explore Our Spaces
+          </Button>
 
           <button className="secondary-btn">
             Watch Our Story
           </button>
         </motion.div>
-      </div>
 
-      
+      </div>
 
     </section>
   );
