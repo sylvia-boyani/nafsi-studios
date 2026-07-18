@@ -115,15 +115,15 @@ function Footer() {
 
             <ul>
 
-              <li>📍 Nairobi, Kenya</li>
+              <li>📍 Kisumu, Kenya</li>
 
               <li>📞 +254 741144434</li>
 
               <li>✉ info@nafsistudios.co.ke</li>
 
-              <li>Mon - Sat</li>
+              <li>Monday - Sunday</li>
 
-              <li>8:00 AM - 8:00 PM</li>
+              <li>Open 24hrs. Book your night session!</li>
 
             </ul>
 
