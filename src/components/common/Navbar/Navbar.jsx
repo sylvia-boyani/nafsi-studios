@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Button from "../Button/Button";
-import logo from "../../../assets/images/nafsi_logo.png";
+import logo from "../../../assets/images/nafsi_logo2.png";
 import "./Navbar.css";
 
 function Navbar() {

@@ -7,7 +7,7 @@ import {
   FaArrowUp
 } from "react-icons/fa";
 
-import logo from "../../../assets/images/nafsi_logo.png";
+import logo from "../../../assets/images/nafsi_logo2.png";
 
 import "./Footer.css";
 
