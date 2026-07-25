@@ -12,13 +12,13 @@ const cards = [
     icon: <FaBullseye />,
     title: "Our Mission",
     text:
-      "To empower artists, creators and innovators by providing inspiring spaces, professional facilities and opportunities for collaboration, learning and artistic growth."
+      "To create an accessible, affordable, and high quality art space that fosters collaborations, partnerships, and education among creators."
   },
   {
     icon: <FaEye />,
     title: "Our Vision",
     text:
-      "To become East Africa's leading multidisciplinary creative hub where talent is nurtured, ideas flourish and communities are connected through art."
+      "To build a sustainable infrastructure and network of artists, educators, and organisers, and their communities."
   },
   {
     icon: <FaGem />,
@@ -27,8 +27,7 @@ const cards = [
       "Creativity",
       "Community",
       "Excellence",
-      "Innovation",
-      "Inclusivity"
+      "Innovation"
     ]
   }
 ];

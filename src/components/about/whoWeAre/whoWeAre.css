@@ -1,111 +1,419 @@
+/*==================================================
+WHO WE ARE
+==================================================*/
+
 .who-we-are{
     background: var(--bg-primary);
+    padding: 120px 0;
 }
+
+/*==================================================
+IMAGE + STORY
+==================================================*/
 
 .who-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:80px;
+    gap:90px;
     align-items:center;
 }
 
+/* IMAGE */
+
 .who-image{
+    position:relative;
     overflow:hidden;
-    border-radius:24px;
+    border-radius:28px;
 }
 
 .who-image img{
     width:100%;
-    height:650px;
+    height:620px;
     object-fit:cover;
-    transition:.6s;
+    display:block;
+    transition:.7s ease;
 }
 
 .who-image:hover img{
     transform:scale(1.05);
 }
 
+/* Optional subtle overlay */
+
+.who-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.25),
+        transparent 40%
+    );
+    pointer-events:none;
+}
+
+/*==================================================
+CONTENT
+==================================================*/
+
 .who-content span{
     color:var(--gold);
     text-transform:uppercase;
     letter-spacing:4px;
     font-size:.9rem;
+    font-weight:600;
 }
 
 .who-content h2{
-    margin:20px 0;
+    margin:18px 0 28px;
+    max-width:600px;
 }
 
 .who-content p{
-    margin-bottom:25px;
-    line-height:1.9;
     color:var(--text-secondary);
+    line-height:1.95;
+    margin-bottom:22px;
+    font-size:1.02rem;
 }
 
-.who-stats{
-    margin-top:50px;
+.who-content strong{
+    color:#fff;
+    font-weight:600;
+}
 
+/*==================================================
+PILLARS TITLE
+==================================================*/
+
+.who-pillars-title{
+    text-align:center;
+    max-width:760px;
+    margin:110px auto 60px;
+}
+
+.who-pillars-title span{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:.9rem;
+    font-weight:600;
+}
+
+.who-pillars-title h3{
+    margin:20px 0;
+    font-size:2.3rem;
+    line-height:1.2;
+}
+
+.who-pillars-title p{
+    color:var(--text-secondary);
+    line-height:1.9;
+}
+
+/*==================================================
+CARDS
+==================================================*/
+
+.who-stats{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
+    grid-template-columns:repeat(3,1fr);
+    gap:32px;
 }
 
 .stat-box{
-    background:var(--bg-card);
+
+    position:relative;
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,.05),
+        rgba(255,255,255,.02)
+    );
+
     border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
-    padding:30px;
-    text-align:center;
-    transition:.35s;
+
+    border-radius:24px;
+
+    padding:38px 34px;
+
+    overflow:hidden;
+
+    transition:all .45s ease;
+
+    display:flex;
+    flex-direction:column;
+
+    height:100%;
+}
+
+/* Gold line */
+
+.stat-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:4px;
+
+    background:var(--gold);
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.45s;
 }
 
 .stat-box:hover{
-    transform:translateY(-6px);
+
+    transform:translateY(-12px);
+
     border-color:rgba(201,162,39,.35);
+
+    box-shadow:
+    0 18px 45px rgba(0,0,0,.35);
 }
+
+.stat-box:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+/* Number */
+
+.stat-number{
+
+    width:64px;
+    height:64px;
+
+    border-radius:50%;
+
+    background:rgba(201,162,39,.12);
+
+    color:var(--gold);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:700;
+
+    font-size:1.05rem;
+
+    margin-bottom:28px;
+
+}
+
+/* Card title */
 
 .stat-box h3{
-    color:var(--gold);
-    font-size:2.5rem;
-    margin-bottom:10px;
+
+    color:#fff;
+
+    margin-bottom:18px;
+
+    font-size:1.45rem;
+
+    line-height:1.4;
+
 }
 
-.stat-box span{
+/* Card text */
+
+.stat-box p{
+
     color:var(--text-secondary);
-    letter-spacing:0;
-    text-transform:none;
-    font-size:1rem;
+
+    line-height:1.9;
+
+    margin:0;
+
+    font-size:.98rem;
+
 }
+
+/*==================================================
+LARGE TABLETS
+==================================================*/
+
+@media(max-width:1200px){
+
+.who-grid{
+
+    gap:60px;
+
+}
+
+.who-image img{
+
+    height:560px;
+
+}
+
+.who-stats{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/*==================================================
+TABLETS
+==================================================*/
 
 @media(max-width:992px){
 
 .who-grid{
+
     grid-template-columns:1fr;
-    gap:50px;
+
+    gap:55px;
+
 }
 
 .who-content{
+
     text-align:center;
-}
 
-.who-image img{
-    height:500px;
-}
-
-}
-
-@media(max-width:768px){
-
-.who-image img{
-    height:320px;
-}
-
-.who-stats{
-    grid-template-columns:1fr;
 }
 
 .who-content h2{
-    font-size:2.2rem;
+
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+.who-image img{
+
+    height:500px;
+
+}
+
+.who-pillars-title{
+
+    margin-top:90px;
+
+}
+
+.who-stats{
+
+    grid-template-columns:1fr;
+
+}
+
+.stat-box{
+
+    text-align:left;
+
+}
+
+}
+
+/*==================================================
+MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+.who-we-are{
+
+    padding:90px 0;
+
+}
+
+.who-image img{
+
+    height:340px;
+
+}
+
+.who-content{
+
+    text-align:left;
+
+}
+
+.who-content h2{
+
+    font-size:2.3rem;
+
+}
+
+.who-content p{
+
+    font-size:1rem;
+
+}
+
+.who-pillars-title{
+
+    margin:70px auto 45px;
+
+}
+
+.who-pillars-title h3{
+
+    font-size:1.9rem;
+
+}
+
+.stat-box{
+
+    padding:30px 26px;
+
+}
+
+.stat-box h3{
+
+    font-size:1.25rem;
+
+}
+
+}
+
+/*==================================================
+SMALL PHONES
+==================================================*/
+
+@media(max-width:480px){
+
+.who-image img{
+
+    height:260px;
+
+}
+
+.who-content h2{
+
+    font-size:1.9rem;
+
+}
+
+.who-pillars-title h3{
+
+    font-size:1.6rem;
+
+}
+
+.stat-box{
+
+    padding:26px 22px;
+
+}
+
+.stat-number{
+
+    width:56px;
+    height:56px;
+
 }
 
 }
