@@ -3,8 +3,8 @@ import SpaceCard from "./SpaceCard";
 
 import music from "../../../assets/images/music.jpg";
 import podcast from "../../../assets/images/podcast.jpg";
-import dance from "../../../assets/images/dance.jpg";
-import pottery from "../../../assets/images/pottery.jpg";
+import dance from "../../../assets/images/nafsi-dance2.jpeg";
+import pottery from "../../../assets/images/pottery-nafsi.jpeg";
 
 const spaces = [
   {

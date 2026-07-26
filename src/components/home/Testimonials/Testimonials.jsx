@@ -4,7 +4,7 @@ import TestimonialsCard from "./TestimonialsCard";
 
 import avatar1 from "../../../assets/images/mic.jpg";
 import avatar2 from "../../../assets/images/music.jpg";
-import avatar3 from "../../../assets/images/pottery.jpg";
+import avatar3 from "../../../assets/images/nafsi-pot2.jpeg";
 
 const testimonials = [
   {

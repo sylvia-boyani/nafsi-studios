@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "./CTA.css";
 
-import ctaImage from "../../../assets/images/collage.png";
+import ctaImage from "../../../assets/images/nafsi-danceO1.jpeg";
 
 function CTA() {
   return (

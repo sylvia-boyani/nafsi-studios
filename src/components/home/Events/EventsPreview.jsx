@@ -3,8 +3,8 @@ import "./EventsPreview.css";
 import EventsCard from "./EventsCard";
 
 import music from "../../../assets/images/music-event.jpg";
-import dance from "../../../assets/images/dance-event.jpg";
-import pottery from "../../../assets/images/pottery-event.jpg";
+import dance from "../../../assets/images/nafsi-danceO1.jpeg";
+import pottery from "../../../assets/images/nafsi-pot2.jpeg";
 
 const events = [
 

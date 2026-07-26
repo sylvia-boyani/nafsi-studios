@@ -3,10 +3,10 @@ import GalleryItem from "./GalleryItem";
 
 import music1 from "../../../assets/images/music1.jpg";
 import music2 from "../../../assets/images/music2.jpg";
-import dance1 from "../../../assets/images/dance1.jpg";
+import dance1 from "../../../assets/images/nafsi-dance2.jpeg";
 import podcast1 from "../../../assets/images/podcast1.jpg";
-import pottery1 from "../../../assets/images/pottery1.jpg";
-import event1 from "../../../assets/images/event1.jpg";
+import pottery1 from "../../../assets/images/nafsi-pot3.jpeg";
+import event1 from "../../../assets/images/nafsi-danceO.jpeg";
 
 const gallery = [
 
