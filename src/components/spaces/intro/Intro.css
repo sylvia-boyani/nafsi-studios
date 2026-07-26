@@ -1,0 +1,167 @@
+/*====================================
+INTRO
+====================================*/
+
+.spaces-intro{
+
+    padding:120px 0;
+
+    background:var(--bg-secondary);
+
+}
+
+/*====================================
+TEXT
+====================================*/
+
+.intro-content{
+
+    max-width:800px;
+
+    margin:0 auto;
+
+    text-align:center;
+
+}
+
+.intro-tag{
+
+    color:var(--gold);
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
+.intro-content h2{
+
+    margin:20px 0 30px;
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+    line-height:1.2;
+
+}
+
+.intro-content p{
+
+    color:var(--text-secondary);
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+
+}
+
+/*====================================
+CARDS
+====================================*/
+
+.intro-highlights{
+
+    margin-top:80px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.highlight-card{
+
+    background:var(--bg-card);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    transition:.35s ease;
+
+}
+
+.highlight-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(201,162,39,.35);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+.highlight-card h3{
+
+    color:var(--gold);
+
+    font-size:2rem;
+
+    margin-bottom:12px;
+
+}
+
+.highlight-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+}
+
+/*====================================
+TABLET
+====================================*/
+
+@media(max-width:992px){
+
+.intro-highlights{
+
+    grid-template-columns:1fr;
+
+    gap:25px;
+
+}
+
+}
+
+/*====================================
+MOBILE
+====================================*/
+
+@media(max-width:768px){
+
+.spaces-intro{
+
+    padding:90px 0;
+
+}
+
+.intro-content h2{
+
+    font-size:2.2rem;
+
+}
+
+.intro-content p{
+
+    font-size:1rem;
+
+}
+
+.highlight-card{
+
+    padding:35px 25px;
+
+}
+
+}

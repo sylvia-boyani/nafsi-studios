@@ -1,0 +1,47 @@
+/*==========================================
+CREATIVE SPACES PAGE
+==========================================*/
+
+.spaces-page{
+    background:var(--bg-primary);
+    color:var(--text-primary);
+    overflow:hidden;
+}
+
+/* Give every section consistent spacing */
+
+.spaces-page section{
+    padding:120px 0;
+}
+
+/* Alternate backgrounds */
+
+.spaces-page section:nth-child(even){
+    background:var(--bg-secondary);
+}
+
+/* Remove extra padding from hero */
+
+.spaces-page .spaces-hero{
+    padding:0;
+}
+
+/* Better spacing on tablets */
+
+@media(max-width:992px){
+
+.spaces-page section{
+    padding:90px 0;
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.spaces-page section{
+    padding:70px 0;
+}
+
+}
