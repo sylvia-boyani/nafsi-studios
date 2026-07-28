@@ -4,6 +4,7 @@ import "./Hero.css";
 import { useRef } from "react";
 
 import heroVideo from "../../assets/nafsi-video.mp4";
+import { Link } from "react-router-dom";
 
 function Hero() {
    const videoRef = useRef(null);
@@ -67,13 +68,17 @@ function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          <Button>
+          <Link to="/spaces">
+          <Button className="primary-btn">
             Explore Our Spaces
           </Button>
+          </Link>
 
+          <Link to="/about">
           <button className="secondary-btn">
             Watch Our Story
           </button>
+          </Link>
         </motion.div>
 
       </div>

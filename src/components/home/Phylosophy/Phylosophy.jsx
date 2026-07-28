@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Button from "../../common/Button/Button";
+import { Link } from "react-router-dom";
 import "./Phylosophy.css";
 
 import philosophyImage from "../../../assets/images/mic.jpg";
@@ -49,9 +50,11 @@ function Phylosophy() {
           collaboration and artistic growth.
         </motion.p>
 
-        <Button>
-          Discover Our Story
-        </Button>
+        <Link to="/about">
+          <Button>
+            Discover Our Story
+          </Button>
+        </Link>
 
       </div>
     </section>
