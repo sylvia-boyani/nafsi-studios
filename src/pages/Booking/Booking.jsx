@@ -1,8 +1,13 @@
+import Hero from "../../components/booking/hero/Hero";
+import BookingForm from "../../components/booking/bookingForm/BookingForm";
+
+
 function Booking() {
   return (
-    <div>
-      <h1>Booking</h1>
-    </div>
+    <>
+      <Hero />
+      <BookingForm />
+    </>
   );
 }
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Button from "../Button/Button";
 import logo from "../../../assets/images/nafsi_logo2.png";
@@ -64,7 +64,7 @@ function Navbar() {
         {/* CTA Button */}
         <div className="nav-right">
 
-          <Button>Book a Session</Button>
+          <Button><Link to="/booking">Book a Session</Link></Button>
 
           <button
             className="menu-btn"
