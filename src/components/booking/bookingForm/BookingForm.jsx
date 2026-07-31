@@ -339,10 +339,15 @@ const whatsappLink =
       </div>
       )}
       <SuccessModal
-          open={showSuccess}
-          onClose={() => setShowSuccess(false)}
-          whatsappLink={whatsappLink}
-       />
+        open={showSuccess}
+        onClose={() => setShowSuccess(false)}
+        tag="BOOKING RECEIVED"
+        title="Thank You!"
+        message="Your booking request has been sent successfully. Our Studio Manager will review it and contact you within 24 hours."
+        buttonText="Continue Exploring"
+        whatsappText="Continue on WhatsApp"
+        whatsappLink={whatsappLink}
+      />
     </section>
   );
 }

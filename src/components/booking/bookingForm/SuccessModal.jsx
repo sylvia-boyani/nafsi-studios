@@ -1,60 +1,59 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaWhatsapp } from "react-icons/fa";
 import "./SuccessModal.css";
 
-function SuccessModal({ open, onClose, whatsappLink, }) {
+function SuccessModal({
+  open,
+  onClose,
+  tag = "BOOKING RECEIVED",
+  title = "Booking Request Sent!",
+  message = "Thank you for choosing Nafsi Studios. Our Studio Manager has received your request and will get back to you shortly.",
+  buttonText = "Continue Exploring",
+  whatsappText = "Continue on WhatsApp",
+  whatsappLink,
+}) {
+  if (!open) return null;
+
   return (
-    <AnimatePresence>
-      {open && (
-        <motion.div
-          className="success-overlay"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+    <div className="success-overlay">
+      <div className="success-modal">
+
+        <div className="success-icon-wrapper">
+          <FaCheckCircle className="success-icon" />
+        </div>
+
+        <span className="success-tag">
+          {tag}
+        </span>
+
+        <h2>{title}</h2>
+
+        <p className="success-message">
+          {message}
+        </p>
+
+        {/* Primary Button */}
+        <button
+          className="success-btn"
+          onClick={onClose}
         >
-          <motion.div
-            className="success-modal"
-            initial={{ scale: 0.85, opacity: 0, y: 40 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ duration: 0.35 }}
+          {buttonText}
+        </button>
+
+        {/* Secondary Button */}
+        {whatsappLink && (
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="success-whatsapp"
           >
-            <div className="success-icon">
-              <FaCheckCircle />
-            </div>
+            <FaWhatsapp style={{ marginRight: "8px" }} />
+            {whatsappText}
+          </a>
+        )}
 
-            <span className="success-tag">
-              BOOKING RECEIVED
-            </span>
-
-            <h2>
-              Thank You!
-            </h2>
-
-            <p>
-              Your booking request has been sent successfully.
-              Our Studio Manager will review it and contact you
-              within <strong>24 hours</strong>.
-            </p>
-
-            <button
-              className="success-btn"
-              onClick={onClose}
-            >
-              Continue Exploring
-            </button>
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="success-whatsapp"
-            >
-             Continue on WhatsApp
-            </a>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+      </div>
+    </div>
   );
 }
 
