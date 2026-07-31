@@ -1,5 +1,6 @@
 import Hero from "../../components/contact/hero/Hero";
 import ContactInfo from "../../components/contact/contactInfo/ContactInfo";
+import Faq from "../../components/contact/faq/Faq";
 import CTA from "../../components/home/CTA/CTA"
 
 function Home() {
@@ -7,6 +8,7 @@ function Home() {
     <>
       <Hero />
       <ContactInfo />
+      <Faq />
       <CTA />
     </>
   );
