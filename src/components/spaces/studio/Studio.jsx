@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
   FaCheckCircle,
   FaArrowRight,
@@ -21,6 +22,7 @@ function Studio({
   reverse = false,
 }) {
   const [activeImage, setActiveImage] = useState(images[0]);
+  const navigate = useNavigate();
 
   return (
     <section className="studio-section">
@@ -147,7 +149,7 @@ function Studio({
 
           {/* BUTTON */}
 
-          <button className="studio-btn">
+          <button className="studio-btn" onClick={() => navigate("/booking", { state: {studio: title,},})}>
 
             Book This Studio
 
