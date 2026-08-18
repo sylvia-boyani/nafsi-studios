@@ -1,0 +1,763 @@
+/* =========================================
+   GALLERY PAGE
+========================================= */
+
+.gallery-page {
+  background: #f8f5ef;
+  color: #1f1f1f;
+  overflow: hidden;
+}
+
+.gallery-container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.gallery-hero {
+  min-height: 82vh;
+  position: relative;
+
+  background:
+    linear-gradient(
+      rgba(20, 18, 16, 0.42),
+      rgba(20, 18, 16, 0.58)
+    ),
+    url("../../assets/images/about-hero.jpg")
+      center / cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: #fff;
+}
+
+.gallery-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.15),
+      transparent 55%,
+      rgba(0, 0, 0, 0.45)
+    );
+}
+
+.gallery-hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 850px;
+  padding: 40px 20px;
+}
+
+.gallery-eyebrow {
+  display: block;
+
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+
+  margin-bottom: 25px;
+}
+
+.gallery-hero h1 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(50px, 7vw, 95px);
+  line-height: 1;
+
+  font-weight: 400;
+
+  margin: 0;
+}
+
+.gallery-hero h1 span {
+  font-style: italic;
+}
+
+.gallery-hero p {
+  max-width: 600px;
+  margin: 30px auto 0;
+
+  font-size: 16px;
+  line-height: 1.8;
+
+  font-weight: 300;
+}
+
+.gallery-scroll {
+  position: absolute;
+
+  bottom: 35px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gallery-scroll span {
+  display: block;
+
+  width: 35px;
+  height: 1px;
+
+  background: #fff;
+}
+
+.gallery-scroll p {
+  margin: 0;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   INTRO + FILTERS
+========================================= */
+
+.gallery-filters-section {
+  padding: 120px 0 55px;
+}
+
+.gallery-section-intro {
+  text-align: center;
+}
+
+.gallery-section-intro > span {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  color: #8b6b45;
+}
+
+.gallery-section-intro h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(38px, 5vw, 65px);
+  font-weight: 400;
+
+  margin: 15px 0 50px;
+}
+
+.gallery-section-intro h2 em {
+  font-style: italic;
+}
+
+
+/* =========================================
+   FILTER BUTTONS
+========================================= */
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.gallery-filters button {
+  border: 1px solid #d7d0c5;
+  background: transparent;
+
+  padding: 12px 25px;
+
+  border-radius: 50px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.gallery-filters button:hover,
+.gallery-filters button.active {
+  background: #2d2925;
+  color: #fff;
+  border-color: #2d2925;
+}
+
+
+/* =========================================
+   FEATURED GALLERY
+========================================= */
+
+.featured-gallery {
+  padding: 40px 0 130px;
+}
+
+.gallery-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  grid-auto-rows: 260px;
+
+  gap: 18px;
+}
+
+
+/* Different image sizes */
+
+.gallery-item-1 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-item-2 {
+  grid-column: span 1;
+}
+
+.gallery-item-3 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.gallery-item-4 {
+  grid-column: span 1;
+}
+
+.gallery-item-5 {
+  grid-column: span 2;
+}
+
+.gallery-item-6 {
+  grid-column: span 1;
+}
+
+.gallery-item-7 {
+  grid-column: span 1;
+}
+
+.gallery-item-8 {
+  grid-column: span 2;
+}
+
+
+/* =========================================
+   GALLERY CARD
+========================================= */
+
+.gallery-item {
+  position: relative;
+
+  overflow: hidden;
+
+  background: #ddd;
+
+  min-height: 260px;
+
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.8s ease,
+    filter 0.8s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.7);
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+
+  padding: 28px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  background:
+    linear-gradient(
+      transparent 40%,
+      rgba(0, 0, 0, 0.75)
+    );
+
+  color: #fff;
+
+  opacity: 0;
+
+  transition: 0.4s ease;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+.gallery-item-overlay span {
+  font-size: 10px;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  opacity: 0.75;
+}
+
+.gallery-item-overlay h3 {
+  font-family: "Playfair Display", serif;
+
+  font-size: 25px;
+  font-weight: 400;
+
+  margin: 7px 0 0;
+}
+
+.gallery-view {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #fff;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.gallery-view:hover {
+  background: #fff;
+  color: #222;
+}
+
+
+/* =========================================
+   BEHIND THE SCENES
+========================================= */
+
+.behind-scenes {
+  padding: 120px 0;
+
+  background: #eae4da;
+}
+
+.behind-header {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+
+  align-items: end;
+
+  margin-bottom: 60px;
+}
+
+.behind-header > div > span {
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #8b6b45;
+}
+
+.behind-header h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(42px, 5vw, 70px);
+
+  font-weight: 400;
+
+  margin: 15px 0 0;
+}
+
+.behind-header h2 em {
+  font-style: italic;
+}
+
+.behind-header > p {
+  max-width: 500px;
+
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  color: #625d56;
+}
+
+
+/* =========================================
+   BEHIND GRID
+========================================= */
+
+.behind-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.2fr 0.8fr 1fr 0.8fr;
+
+  gap: 16px;
+}
+
+.behind-image {
+  height: 360px;
+
+  overflow: hidden;
+}
+
+.behind-image:nth-child(2) {
+  margin-top: 70px;
+}
+
+.behind-image:nth-child(4) {
+  margin-top: 40px;
+}
+
+.behind-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: 0.7s ease;
+}
+
+.behind-image:hover img {
+  transform: scale(1.05);
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.gallery-cta {
+  min-height: 650px;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #fff;
+
+  background:
+    url("../../assets//images/collage.png")
+      center / cover no-repeat;
+}
+
+.gallery-cta-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    rgba(30, 27, 24, 0.72);
+}
+
+.gallery-cta-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 700px;
+
+  padding: 40px 20px;
+}
+
+.gallery-cta-content > span {
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+.gallery-cta h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(55px, 7vw, 90px);
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  margin: 25px 0;
+}
+
+.gallery-cta h2 em {
+  font-style: italic;
+}
+
+.gallery-cta p {
+  max-width: 550px;
+
+  margin: 0 auto 35px;
+
+  line-height: 1.8;
+
+  font-size: 15px;
+
+  font-weight: 300;
+}
+
+.gallery-cta-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding: 16px 28px;
+
+  background: #fff;
+
+  color: #24211e;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  transition: 0.3s ease;
+}
+
+.gallery-cta-button span {
+  font-size: 20px;
+
+  transition: 0.3s ease;
+}
+
+.gallery-cta-button:hover {
+  background: #d6b98c;
+  color: #fff;
+}
+
+.gallery-cta-button:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-auto-rows: 250px;
+  }
+
+  .gallery-item-1,
+  .gallery-item-5,
+  .gallery-item-8 {
+    grid-column: span 2;
+  }
+
+  .gallery-item-3 {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .behind-header {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .behind-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .behind-image {
+    height: 330px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .gallery-container {
+    width: 88%;
+  }
+
+  .gallery-hero {
+    min-height: 75vh;
+  }
+
+  .gallery-hero h1 {
+    font-size: 48px;
+  }
+
+  .gallery-hero p {
+    font-size: 14px;
+  }
+
+  .gallery-scroll {
+    bottom: 25px;
+  }
+
+
+  /* Filters */
+
+  .gallery-filters-section {
+    padding: 80px 0 35px;
+  }
+
+  .gallery-section-intro h2 {
+    margin-bottom: 35px;
+  }
+
+  .gallery-filters {
+    justify-content: flex-start;
+
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    padding-bottom: 10px;
+
+    scrollbar-width: none;
+  }
+
+  .gallery-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-filters button {
+    flex-shrink: 0;
+
+    padding: 10px 20px;
+  }
+
+
+  /* Gallery */
+
+  .featured-gallery {
+    padding: 25px 0 80px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+
+    grid-auto-rows: 300px;
+
+    gap: 12px;
+  }
+
+  .gallery-item-1,
+  .gallery-item-2,
+  .gallery-item-3,
+  .gallery-item-4,
+  .gallery-item-5,
+  .gallery-item-6,
+  .gallery-item-7,
+  .gallery-item-8 {
+    grid-column: span 1;
+
+    grid-row: span 1;
+  }
+
+  .gallery-item-1 {
+    height: 400px;
+  }
+
+  .gallery-item-overlay {
+    opacity: 1;
+
+    padding: 20px;
+  }
+
+
+  /* Behind scenes */
+
+  .behind-scenes {
+    padding: 80px 0;
+  }
+
+  .behind-header {
+    margin-bottom: 40px;
+  }
+
+  .behind-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .behind-image,
+  .behind-image:nth-child(2),
+  .behind-image:nth-child(4) {
+    height: 350px;
+
+    margin-top: 0;
+  }
+
+
+  /* CTA */
+
+  .gallery-cta {
+    min-height: 550px;
+  }
+
+  .gallery-cta h2 {
+    font-size: 55px;
+  }
+
+  .gallery-cta p {
+    font-size: 14px;
+  }
+
+}
