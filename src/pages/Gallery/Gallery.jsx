@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Gallery.css";
 
 const galleryItems = [
@@ -11,7 +11,7 @@ const galleryItems = [
   {
     id: 2,
     category: "podcast",
-    image: "/images/podcast-event.jpg",
+    image: "/images/podcast.jpg",
     title: "Podcast Sessions",
   },
   {
@@ -35,51 +35,69 @@ const galleryItems = [
   {
     id: 6,
     category: "music",
-    image: "/images/music2.jpg",
+    image: "/images/studio.jpeg",
     title: "Live Creation",
   },
   {
     id: 7,
     category: "podcast",
-    image: "/images/podcast.jpg",
+    image: "/images/podcast-event.jpg",
     title: "Behind the Mic",
   },
   {
     id: 8,
     category: "dance",
-    image: "/images/nafsi-danceO.jpeg",
+    image: "/images/nafsi-danceO1.jpeg",
     title: "Creative Movement",
+  },
+  {
+    id: 9,
+    category: "pottery",
+    image: "/images/pottery-n.jpeg",
+    title: "Hands at Work",
+  },
+  {
+    id: 10,
+    category: "pottery",
+    image: "/images/nafsi-pot3.jpeg",
+    title: "The Art of Making",
+  },
+  {
+    id: 11,
+    category: "music",
+    image: "/images/music2.jpg",
+    title: "Sound & Soul",
+  },
+  {
+    id: 12,
+    category: "podcast",
+    image: "/images/podcast1.jpg",
+    title: "Conversations",
   },
 ];
 
 const behindScenes = [
   {
     id: 1,
-    image: "/images/podcast1.jpg",
+    image: "/images/studio.jpeg",
   },
   {
     id: 2,
-    image: "/images/music2.jpg",
+    image: "/images/mic.jpg",
   },
   {
     id: 3,
-    image: "/images/nafsi-pot1.jpeg",
+    image: "/images/event1.jpg",
   },
   {
     id: 4,
-    image: "/images/nafsi-danceO1.jpeg",
+    image: "/images/nafsi-pot1.jpeg",
   },
 ];
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-
-  const filteredItems =
-    activeCategory === "all"
-      ? galleryItems
-      : galleryItems.filter(
-          (item) => item.category === activeCategory
-        );
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const categories = [
     "all",
@@ -90,12 +108,94 @@ const Gallery = () => {
     "events",
   ];
 
+  const filteredItems =
+    activeCategory === "all"
+      ? galleryItems
+      : galleryItems.filter(
+          (item) => item.category === activeCategory
+        );
+
+  /* =========================
+     LIGHTBOX NAVIGATION
+  ========================= */
+
+  const currentIndex = selectedImage
+    ? filteredItems.findIndex(
+        (item) => item.id === selectedImage.id
+      )
+    : -1;
+
+  const showNext = () => {
+    if (currentIndex === -1) return;
+
+    const nextIndex =
+      (currentIndex + 1) % filteredItems.length;
+
+    setSelectedImage(filteredItems[nextIndex]);
+  };
+
+  const showPrevious = () => {
+    if (currentIndex === -1) return;
+
+    const previousIndex =
+      (currentIndex - 1 + filteredItems.length) %
+      filteredItems.length;
+
+    setSelectedImage(filteredItems[previousIndex]);
+  };
+
+  /* =========================
+     ESC KEY
+  ========================= */
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (!selectedImage) return;
+
+      if (event.key === "Escape") {
+        setSelectedImage(null);
+      }
+
+      if (event.key === "ArrowRight") {
+        showNext();
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPrevious();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener(
+        "keydown",
+        handleKeyDown
+      );
+    };
+  });
+
+  /* =========================
+     PREVENT BODY SCROLL
+  ========================= */
+
+  useEffect(() => {
+    document.body.style.overflow = selectedImage
+      ? "hidden"
+      : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedImage]);
+
   return (
     <main className="gallery-page">
 
-      {/* =========================
-          GALLERY HERO
-      ========================= */}
+      {/* =================================
+          HERO
+      ================================= */}
+
       <section className="gallery-hero">
 
         <div className="gallery-hero-overlay"></div>
@@ -125,9 +225,10 @@ const Gallery = () => {
       </section>
 
 
-      {/* =========================
-          CATEGORY FILTERS
-      ========================= */}
+      {/* =================================
+          FILTERS
+      ================================= */}
+
       <section className="gallery-filters-section">
 
         <div className="gallery-container">
@@ -145,6 +246,7 @@ const Gallery = () => {
           <div className="gallery-filters">
 
             {categories.map((category) => (
+
               <button
                 key={category}
                 className={
@@ -152,10 +254,14 @@ const Gallery = () => {
                     ? "active"
                     : ""
                 }
-                onClick={() => setActiveCategory(category)}
+                onClick={() => {
+                  setActiveCategory(category);
+                  setSelectedImage(null);
+                }}
               >
                 {category}
               </button>
+
             ))}
 
           </div>
@@ -165,9 +271,10 @@ const Gallery = () => {
       </section>
 
 
-      {/* =========================
+      {/* =================================
           FEATURED GALLERY
-      ========================= */}
+      ================================= */}
+
       <section className="featured-gallery">
 
         <div className="gallery-container">
@@ -177,8 +284,9 @@ const Gallery = () => {
             {filteredItems.map((item, index) => (
 
               <article
-                className={`gallery-item gallery-item-${index + 1}`}
+                className={`gallery-item gallery-item-${(index % 8) + 1}`}
                 key={item.id}
+                onClick={() => setSelectedImage(item)}
               >
 
                 <img
@@ -190,6 +298,7 @@ const Gallery = () => {
                 <div className="gallery-item-overlay">
 
                   <div>
+
                     <span>
                       {item.category}
                     </span>
@@ -197,9 +306,13 @@ const Gallery = () => {
                     <h3>
                       {item.title}
                     </h3>
+
                   </div>
 
-                  <button className="gallery-view">
+                  <button
+                    className="gallery-view"
+                    aria-label={`View ${item.title}`}
+                  >
                     ↗
                   </button>
 
@@ -216,9 +329,10 @@ const Gallery = () => {
       </section>
 
 
-      {/* =========================
+      {/* =================================
           BEHIND THE SCENES
-      ========================= */}
+      ================================= */}
+
       <section className="behind-scenes">
 
         <div className="gallery-container">
@@ -226,17 +340,21 @@ const Gallery = () => {
           <div className="behind-header">
 
             <div>
-              <span>THE MOMENTS BETWEEN</span>
+
+              <span>
+                THE MOMENTS BETWEEN
+              </span>
 
               <h2>
                 Behind the <em>Scenes</em>
               </h2>
+
             </div>
 
             <p>
-              The laughter, preparation, experimentation and
-              energy that happen before the final creation
-              comes to life.
+              The laughter, preparation, experimentation
+              and energy that happen before the final
+              creation comes to life.
             </p>
 
           </div>
@@ -250,11 +368,13 @@ const Gallery = () => {
                 className="behind-image"
                 key={item.id}
               >
+
                 <img
                   src={item.image}
                   alt="Behind the scenes at Nafsi Studios"
                   loading="lazy"
                 />
+
               </div>
 
             ))}
@@ -266,9 +386,10 @@ const Gallery = () => {
       </section>
 
 
-      {/* =========================
+      {/* =================================
           CTA
-      ========================= */}
+      ================================= */}
+
       <section className="gallery-cta">
 
         <div className="gallery-cta-overlay"></div>
@@ -288,7 +409,10 @@ const Gallery = () => {
             for creativity, collaboration and expression.
           </p>
 
-          <a href="/contact" className="gallery-cta-button">
+          <a
+            href="/contact"
+            className="gallery-cta-button"
+          >
             Book a Session
             <span>→</span>
           </a>
@@ -296,6 +420,81 @@ const Gallery = () => {
         </div>
 
       </section>
+
+
+      {/* =================================
+          LIGHTBOX
+      ================================= */}
+
+      {selectedImage && (
+
+        <div
+          className="gallery-lightbox"
+          onClick={() => setSelectedImage(null)}
+        >
+
+          <button
+            className="lightbox-close"
+            onClick={() => setSelectedImage(null)}
+            aria-label="Close gallery"
+          >
+            ×
+          </button>
+
+
+          <button
+            className="lightbox-arrow lightbox-prev"
+            onClick={(event) => {
+              event.stopPropagation();
+              showPrevious();
+            }}
+            aria-label="Previous image"
+          >
+            ←
+          </button>
+
+
+          <div
+            className="lightbox-content"
+            onClick={(event) =>
+              event.stopPropagation()
+            }
+          >
+
+            <img
+              src={selectedImage.image}
+              alt={selectedImage.title}
+            />
+
+            <div className="lightbox-caption">
+
+              <span>
+                {selectedImage.category}
+              </span>
+
+              <h3>
+                {selectedImage.title}
+              </h3>
+
+            </div>
+
+          </div>
+
+
+          <button
+            className="lightbox-arrow lightbox-next"
+            onClick={(event) => {
+              event.stopPropagation();
+              showNext();
+            }}
+            aria-label="Next image"
+          >
+            →
+          </button>
+
+        </div>
+
+      )}
 
     </main>
   );

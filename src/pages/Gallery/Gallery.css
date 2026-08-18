@@ -582,6 +582,469 @@
   transform: translateX(5px);
 }
 
+/* =========================================
+   GALLERY IMAGE ENTRANCE
+========================================= */
+
+.gallery-item {
+  animation: galleryReveal 0.8s ease both;
+}
+
+.gallery-item:nth-child(2) {
+  animation-delay: 0.05s;
+}
+
+.gallery-item:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+.gallery-item:nth-child(4) {
+  animation-delay: 0.15s;
+}
+
+.gallery-item:nth-child(5) {
+  animation-delay: 0.2s;
+}
+
+.gallery-item:nth-child(6) {
+  animation-delay: 0.25s;
+}
+
+.gallery-item:nth-child(7) {
+  animation-delay: 0.3s;
+}
+
+.gallery-item:nth-child(8) {
+  animation-delay: 0.35s;
+}
+
+@keyframes galleryReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   FILTER TRANSITION
+========================================= */
+
+.gallery-filters button {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-filters button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: currentColor;
+
+  transform: translateX(-50%);
+
+  transition: width 0.3s ease;
+}
+
+.gallery-filters button:hover::after {
+  width: 45%;
+}
+
+.gallery-filters button.active::after {
+  display: none;
+}
+
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+.gallery-lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  background:
+    rgba(15, 13, 11, 0.96);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+
+  animation: lightboxFade 0.35s ease;
+}
+
+@keyframes lightboxFade {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================
+   LIGHTBOX CONTENT
+========================================= */
+
+.lightbox-content {
+  max-width: 1100px;
+
+  max-height: 90vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  animation: lightboxImage 0.45s ease;
+}
+
+@keyframes lightboxImage {
+
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+.lightbox-content img {
+  display: block;
+
+  max-width: 100%;
+
+  max-height: 75vh;
+
+  object-fit: contain;
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   LIGHTBOX CAPTION
+========================================= */
+
+.lightbox-caption {
+  width: 100%;
+
+  margin-top: 18px;
+
+  text-align: left;
+
+  color: #fff;
+}
+
+.lightbox-caption span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #c7a978;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.lightbox-caption h3 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 25px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================
+   LIGHTBOX CLOSE
+========================================= */
+
+.lightbox-close {
+  position: absolute;
+
+  top: 25px;
+  right: 30px;
+
+  width: 50px;
+  height: 50px;
+
+  border: 1px solid rgba(255,255,255,.3);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: .3s ease;
+
+  z-index: 5;
+}
+
+.lightbox-close:hover {
+  background: #fff;
+
+  color: #222;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================
+   LIGHTBOX ARROWS
+========================================= */
+
+.lightbox-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255,255,255,.3);
+
+  background: rgba(255,255,255,.04);
+
+  color: #fff;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  transition: .3s ease;
+
+  z-index: 5;
+}
+
+.lightbox-arrow:hover {
+  background: #fff;
+
+  color: #222;
+
+  transform:
+    translateY(-50%)
+    scale(1.05);
+}
+
+.lightbox-prev {
+  left: 30px;
+}
+
+.lightbox-next {
+  right: 30px;
+}
+
+
+/* =========================================
+   BETTER GALLERY HOVER
+========================================= */
+
+.gallery-item::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border: 1px solid transparent;
+
+  transition: .4s ease;
+
+  pointer-events: none;
+}
+
+.gallery-item:hover::after {
+  inset: 8px;
+
+  border-color:
+    rgba(255,255,255,.45);
+}
+
+
+/* =========================================
+   BEHIND SCENES IMAGE EFFECT
+========================================= */
+
+.behind-image {
+  position: relative;
+}
+
+.behind-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 12px;
+
+  border: 1px solid
+    rgba(255,255,255,.45);
+
+  opacity: 0;
+
+  transition: .5s ease;
+
+  pointer-events: none;
+}
+
+.behind-image:hover::after {
+  opacity: 1;
+}
+
+
+/* =========================================
+   CTA BUTTON
+========================================= */
+
+.gallery-cta-button {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.gallery-cta-button::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: #c7a978;
+
+  transform:
+    translateX(-101%);
+
+  transition: .4s ease;
+
+  z-index: 0;
+}
+
+.gallery-cta-button:hover::before {
+  transform: translateX(0);
+}
+
+.gallery-cta-button span,
+.gallery-cta-button {
+  isolation: isolate;
+}
+
+.gallery-cta-button span,
+.gallery-cta-button {
+  position: relative;
+}
+
+.gallery-cta-button:hover {
+  color: #fff;
+}
+
+
+/* =========================================
+   MOBILE LIGHTBOX
+========================================= */
+
+@media (max-width: 600px) {
+
+  .gallery-lightbox {
+    padding: 25px 15px;
+  }
+
+  .lightbox-content {
+    width: 100%;
+
+    max-height: 85vh;
+  }
+
+  .lightbox-content img {
+    max-height: 65vh;
+  }
+
+  .lightbox-close {
+    top: 15px;
+    right: 15px;
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 25px;
+  }
+
+  .lightbox-arrow {
+    top: auto;
+    bottom: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    transform: none;
+  }
+
+  .lightbox-arrow:hover {
+    transform: scale(1.05);
+  }
+
+  .lightbox-prev {
+    left: 25px;
+  }
+
+  .lightbox-next {
+    right: 25px;
+  }
+
+  .lightbox-caption {
+    padding: 0 10px;
+  }
+
+  .lightbox-caption h3 {
+    font-size: 21px;
+  }
+
+}
 
 /* =========================================
    TABLET
