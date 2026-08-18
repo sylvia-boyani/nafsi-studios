@@ -1,8 +1,14 @@
+import EventsHero from "../../components/events/eventsHero/EventsHero";
+import UpcomingEvents from "../../components/events/upcomingEvents/UpcomingEvents";
+
 function Events() {
   return (
-    <div>
-      <h1>Events</h1>
-    </div>
+    <>
+      <EventsHero />
+      <UpcomingEvents />
+
+      
+    </>
   );
 }
 

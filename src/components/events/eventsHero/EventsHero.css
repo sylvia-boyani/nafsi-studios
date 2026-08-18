@@ -1,0 +1,105 @@
+.events-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, .88) 0%,
+            rgba(0, 0, 0, .68) 45%,
+            rgba(0, 0, 0, .35) 100%
+        ),
+        url("../../../assets/images/event1.jpg") center/cover no-repeat;
+}
+
+.events-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, .15),
+            rgba(0, 0, 0, .5)
+        );
+}
+
+.events-hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.events-hero-tag {
+    display: inline-block;
+    color: var(--gold);
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.events-hero h1 {
+    max-width: 800px;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
+    line-height: .95;
+    font-weight: 500;
+    letter-spacing: -2px;
+}
+
+.events-hero h1 span {
+    color: var(--gold);
+}
+
+.events-hero p {
+    max-width: 620px;
+    margin-top: 30px;
+    color: rgba(255,255,255,.78);
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+.events-hero-line {
+    height: 2px;
+    margin-top: 35px;
+    background: var(--gold);
+}
+
+@media (max-width: 768px) {
+
+    .events-hero {
+        min-height: 65vh;
+
+        background:
+            linear-gradient(
+                rgba(0,0,0,.72),
+                rgba(0,0,0,.78)
+            ),
+            url("../../../assets/images/music-event.jpg") center/cover no-repeat;
+    }
+
+    .events-hero-content {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .events-hero-tag {
+        font-size: .75rem;
+        letter-spacing: 3px;
+    }
+
+    .events-hero h1 {
+        font-size: clamp(3rem, 13vw, 4.5rem);
+        letter-spacing: -1px;
+    }
+
+    .events-hero p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+}
