@@ -12,7 +12,7 @@ const testimonials = [
     name: "Sarah Wanjiku",
     role: "Singer • Songwriter",
     quote:
-      "Nafsi Studios gave me a creative environment where I could truly express myself. Every session felt inspiring and professional."
+      ""
   },
 
   {
@@ -20,7 +20,7 @@ const testimonials = [
     name: "Brian Otieno",
     role: "Podcast Host",
     quote:
-      "The podcast studio exceeded my expectations. The equipment, atmosphere and team made every recording effortless."
+      ""
   },
 
   {
@@ -28,7 +28,7 @@ const testimonials = [
     name: "Faith Mwangi",
     role: "Ceramic Artist",
     quote:
-      "More than just a pottery studio, Nafsi has become a creative community where artists encourage one another to grow."
+      ""
   }
 ];
 
