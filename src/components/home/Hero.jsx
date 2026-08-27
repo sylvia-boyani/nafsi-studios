@@ -47,9 +47,9 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          Where
+          Creators
           <br />
-          We Birth Art
+          Creating
         </motion.h1>
 
         <motion.p
@@ -57,9 +57,8 @@ function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          A creative arts space bringing together music,
-          dance, podcasting and pottery under one roof.
-          Create, collaborate and inspire.
+         A space built and curated for artists, community organisers, and educators to create from and share their work with their communities.
+         This is done through artistic partnerships and collaborations; communal organising; and mentorships, fellowships, and education programs.
         </motion.p>
 
         <motion.div

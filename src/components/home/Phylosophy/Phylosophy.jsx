@@ -32,9 +32,9 @@ function Phylosophy() {
           transition={{ duration: .8 }}
           viewport={{ once: true }}
         >
-          Creativity Begins
+          Art belongs
           <br />
-          With Belonging.
+          to Community
         </motion.h2>
 
         <motion.p
@@ -43,11 +43,8 @@ function Phylosophy() {
           transition={{ delay: .3 }}
           viewport={{ once: true }}
         >
-          At Nafsi Studios, every rehearsal,
-          every recording, every story and
-          every handcrafted piece contributes
-          to a community built on creativity,
-          collaboration and artistic growth.
+          The mission of nafsi studios is to create an accessible, affordable, and high quality art space that fosters collaborations, partnerships, and education among creators.
+          Our guiding vision is to build a sustainable infrastructure and network of artists, educators, and organisers, and their communities.
         </motion.p>
 
         <Link to="/about">
